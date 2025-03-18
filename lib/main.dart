@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cp/donasipage.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +20,8 @@ class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
 }
+
+
 
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 2;
@@ -76,7 +79,7 @@ class HomePage extends StatelessWidget {
     {'icon': Icons.volunteer_activism, 'label': 'Voluntrip', 'route': VoluntripPage()},
     {'icon': Icons.business, 'label': 'Kolaborasi CSR', 'route': KolaborasiCSRPage()},
     {'icon': Icons.shield, 'label': 'Saling Jaga', 'route': SalingJagaPage()},
-    {'icon': Icons.more_horiz, 'label': 'Lainnya', 'route': LainnyaPage()},
+    {'icon': Icons.more_horiz, 'label': 'Lainnya', 'route':  LainnyaPage()},
   ];
 
   @override
@@ -92,7 +95,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
         actions: [
-          IconButton(icon: Icon(Icons.favorite), onPressed: () => navigateTo(context, DonasiPage())),
+          IconButton(icon: Icon(Icons.favorite), onPressed: () => navigateTo(context, FavoritePage())),
           IconButton(icon: Icon(Icons.mail), onPressed: () => navigateTo(context, InboxPage())),
           IconButton(icon: Icon(Icons.person), onPressed: () => navigateTo(context, ProfilePage())),
         ],
@@ -234,7 +237,6 @@ class HomePage extends StatelessWidget {
   }
 }
 // Placeholder pages
-class DonasiPage extends StatelessWidget { Widget build(BuildContext context) => Scaffold(body: Center(child: Text('Donasi'))); }
 class ZakatPage extends StatelessWidget { Widget build(BuildContext context) => Scaffold(body: Center(child: Text('Zakat'))); }
 class GalangDanaPage extends StatelessWidget { Widget build(BuildContext context) => Scaffold(body: Center(child: Text('Galang Dana'))); }
 class DonasiSayaPage extends StatelessWidget { Widget build(BuildContext context) => Scaffold(body: Center(child: Text('Donasi Saya'))); }
@@ -245,3 +247,4 @@ class DonasiOtomatisPage extends StatelessWidget { Widget build(BuildContext con
 class VoluntripPage extends StatelessWidget { Widget build(BuildContext context) => Scaffold(body: Center(child: Text('Voluntrip'))); }
 class KolaborasiCSRPage extends StatelessWidget { Widget build(BuildContext context) => Scaffold(body: Center(child: Text('CSR'))); }
 class SalingJagaPage extends StatelessWidget { Widget build(BuildContext context) => Scaffold(body: Center(child: Text('Saling Jaga'))); }
+class FavoritePage extends StatelessWidget { Widget build(BuildContext context) => Scaffold(body: Center(child: Text('Favorite'))); }
